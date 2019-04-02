@@ -1,0 +1,13 @@
+{
+  "name": "multi-file-component",
+  "version": "0.0.1",
+  "description": "multiple file component demo",
+  "scripts": {
+    "build": "node ./build/compile.js"
+  },
+  "author": "zhoujunpeng <rico.zjp@gmail.com> (https://github.com/zhoujunpeng)",
+  "license": "MIT",
+  "devDependencies": {
+    "jsdom": "^14.0.0"
+  }
+}

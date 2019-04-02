@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .btn{
+      height: 30px;
+      font-size: 14px;
+    }
+    #ifr{
+      display: block;
+      margin-top: 50px;
+      width: 100%;
+      height: 500px;
+    }
+    my-dialog:not(:defined){
+      display: none;
+    }
+    .dialog__title{
+      color: blue;
+      font-size: 16px;
+      background-color: black;
+      color: #ffffff;
+      height: 40px;
+      line-height: 40px;
+    }
+    .dialog__content{
+      display: flex;
+      padding: 0 20px;
+    }
+    .dialog__content-showcase{
+      width: 100px;
+    }
+    .dialog__content-img{
+      width: 100%;
+      display: block;
+    }
+    .dialog__content-author{
+      color: #999;
+      font-size: 12px;
+      text-align: justify;
+      word-break: break-word;
+    }
+    .dialog__content-desc{
+      flex: 1;
+      margin: 0;
+      padding: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <h3>My Dialog</h3>
+
+  <button class='btn' id='btn-open-dialog'>Open Dialog</button>
+  <button class='btn' id='btn-change-name'>Change Dialog Name</button>
+  <button class='btn' id='btn-remove-dialog'>Remove Dialog</button>
+  
+  <my-dialog id="dialog">
+    <div slot="title" class='dialog__title'>几何建筑</div>
+    <section slot="content" class="dialog__content">
+      <div class="dialog__content-showcase">
+        <img src="./1.jpg" alt="几何建筑" class="dialog__content-img"/>
+        <span class="dialog__content-author">Photo by Ricardo Gomez Angel on Unsplash</span>
+      </div>
+      <p class="dialog__content-desc">几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述几何建筑描述</p>
+    </section>
+  </my-dialog>
+  <script src="runtime.js"></script>
+  <script src="dist/my-dialog.js"></script>
+  <script>
+  let $dialog = document.getElementById('dialog');
+  const $btn_open_dialog = document.getElementById('btn-open-dialog');
+  const $btn_remove_dialog = document.getElementById('btn-remove-dialog');
+  const $btn_change_name = document.getElementById('btn-change-name');
+
+  $btn_open_dialog.addEventListener('click',ev=>{
+    $dialog.open = true;
+  },false);
+
+  $btn_remove_dialog.addEventListener('click',ev=>{
+    $dialog.parentNode.removeChild($dialog);
+  },false);
+  
+  $btn_change_name.addEventListener('click',ev=>{
+    $dialog.name = Math.random();
+  },false);
+  </script>
+</body>
+</html>

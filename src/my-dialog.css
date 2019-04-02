@@ -1,0 +1,37 @@
+.my-dialog__close{
+  position: absolute;
+  top: 0;
+  right: 5px;
+  border: none;
+  font-weight: bold;
+  font-size: 24px;
+  background: none;
+  color: red;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+.my-dialog__close:focus{
+  outline: none;
+}
+.my-dialog__wrapper{
+  background-color: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: solid 1px #000000;
+  border-radius: 2px;
+  overflow: hidden;
+  display: none;
+}
+.my-dialog__wrapper[open='true']{
+  display: block;
+}
+.my-dialog__head{
+  white-space: nowrap;
+  text-align: center;
+}
+.my-dialog__content{
+  margin: 10px 0;
+}
